@@ -11,10 +11,10 @@
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="353dp"
+        android:layout_height="304dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="86dp"
-        android:src="@drawable/bac"/>
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/bac" />
 
     <EditText
         android:layout_width="261dp"
@@ -29,26 +29,40 @@
         android:ems="10"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:hint="please enter your name"
         android:inputType="textPersonName"
         android:textColorHighlight="#A64EB43C"
         android:textColorHint="#FC423A3A" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="94dp"
+        android:layout_width="103dp"
+        android:layout_height="92dp"
         android:layout_alignBottom="@+id/imageView2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="165dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/lets_btn"
         android:fontFamily="serif-monospace"
         android:text="Let's Start"
         android:textColor="#F8F8F8"
         android:textSize="14sp"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:text="Enter your name"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
+    </LinearLayout>
 
 </RelativeLayout>
