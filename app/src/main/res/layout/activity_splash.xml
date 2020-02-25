@@ -7,21 +7,10 @@
     tools:context=".splash">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="351dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="171dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="208dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/a"
-        android:contentDescription="TODO" />
+        android:id="@+id/imageView3"
+        android:layout_width="215dp"
+        android:layout_height="259dp"
+        android:layout_centerInParent="true"
+
+        app:srcCompat="@drawable/logo" />
 </RelativeLayout>
