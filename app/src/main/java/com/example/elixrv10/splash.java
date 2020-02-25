@@ -8,21 +8,23 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 public class splash extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT=4500;
+    private static int splash_time_out=3000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         , WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);getSupportActionBar().hide();
-        new Handler(  ).postDelayed (new Runnable ( ) {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent Homeintent=new Intent ( splash.this,MainActivity.class );
-                startActivity ( Homeintent );
-                finish ();
+                Intent homeIntent  =new Intent(splash.this, MainActivity.class);
+                startActivity(homeIntent);
+                finish();
+
             }
-        } ,SPLASH_TIME_OUT);
+        },splash_time_out);
 
     }
 }
