@@ -13,9 +13,10 @@
         android:layout_height="335dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="0dp"
         android:layout_marginEnd="-1dp"
-        android:layout_marginBottom="188dp"
+        android:layout_marginBottom="113dp"
         android:background="@drawable/mainback"
         app:srcCompat="@drawable/backe" />
 
@@ -31,14 +32,15 @@
         android:foregroundGravity="center"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="Let's Start"
+        android:onClick="start_btn"
         android:textColor="#E49622"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="293dp"
-        android:layout_height="31dp"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -46,7 +48,7 @@
         android:layout_marginStart="33dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="34dp"
-        android:layout_marginBottom="526dp"
+        android:layout_marginBottom="490dp"
         android:fontFamily="@font/fonts"
         android:foregroundGravity="center_horizontal"
         android:freezesText="false"
