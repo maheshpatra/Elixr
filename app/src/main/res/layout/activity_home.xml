@@ -4,75 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainback"
     android:orientation="vertical">
 
+
     <Button
-        android:background="@drawable/cimg"
         android:id="@+id/c"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="92dp"
+        android:background="@drawable/cimg"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/java"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/cpp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/cbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/c"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
 
     <Button
         android:id="@+id/java"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="252dp"
         android:background="@drawable/java"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471" />
 
     <Button
         android:id="@+id/html"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/html"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cpp"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.011" />
 
     <Button
         android:id="@+id/python"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="96dp"
         android:background="@drawable/python"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/come"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/java"
+        app:layout_constraintVertical_bias="0.859" />
 
     <Button
         android:id="@+id/come"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="48dp"
         android:background="@drawable/come"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/html" />
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/html"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
