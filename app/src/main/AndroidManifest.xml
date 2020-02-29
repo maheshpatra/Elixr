@@ -7,12 +7,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LanguagePython"></activity>
-        <activity android:name=".LanguageJava" />
-        <activity android:name=".LanguageCpp" />
-        <activity android:name=".LanguageC" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LanguagePython"
+            android:label="Python Tutorial"
+            />
+        <activity android:name=".LanguageJava"
+            android:label="Java Tutorial"
+            />
+        <activity android:name=".LanguageCpp"
+            android:label="C++ Tutorial"
+            />
+        <activity android:name=".LanguageC"
+            android:label="C Tutorial"
+            />
+
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"
+
+            />
         <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
