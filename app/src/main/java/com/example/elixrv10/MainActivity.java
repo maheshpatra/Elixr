@@ -25,22 +25,22 @@ public class MainActivity extends AppCompatActivity {
               , WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
           Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_main);
-         Username = findViewById(R.id.editText);
-         username = Username.getText().toString().trim();
-
     }
 
     public void str(View view) {
-        if(username.length()>0) {
+
+        Username = findViewById(R.id.editText);
+        username = Username.getText().toString().trim();
+      //  Toast.makeText(this,username,Toast.LENGTH_LONG).show();
+       if(username.length() > 0) {
              Intent intent = new Intent(this, HomeActivity.class);
              intent.putExtra(MSG, username);
              startActivity(intent);
-          //  Log.i("Button pressed",username);
-             finish();
-       } else{
-            Toast.makeText(this,"Enter your name..",Toast.LENGTH_SHORT).show();
-          //  Log.i("Button pressed",username);
-      }
+           // finish();
+       }
+        else{
+          Toast.makeText(this,"Enter your name..",Toast.LENGTH_SHORT).show();
+           }
     }
 }
 

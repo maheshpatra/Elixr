@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:id="@+id/Con"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#000">
     <Button
         android:id="@+id/cpp"
         android:layout_width="105dp"
@@ -66,7 +67,7 @@
         android:layout_marginTop="60dp"
         android:background="@drawable/c"
         android:onClick="c"
-        android:text=""
+        android:textColor="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -90,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:textColor="#0F0F10"
+        android:textColor="#FFFFFF"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
