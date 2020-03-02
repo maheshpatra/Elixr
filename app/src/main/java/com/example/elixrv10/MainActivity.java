@@ -1,6 +1,7 @@
 package com.example.elixrv10;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -25,6 +26,27 @@ public class MainActivity extends AppCompatActivity {
               , WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
           Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_main);
+        loaddata();
+    }
+
+    public void savedata(){
+        SharedPreferences sharedPreferences = getSharedPreferences("username",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Username",username);
+        editor.apply();
+    }
+
+    public void loaddata(){
+        try {
+            SharedPreferences sharedPreferences = getSharedPreferences("username",MODE_PRIVATE);
+            username = sharedPreferences.getString("Username", String.valueOf(MODE_PRIVATE));
+            Username.setText(username);
+        }
+        catch (Exception e){
+            Toast.makeText(this,"Failed",Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
     public void str(View view) {
@@ -41,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
         else{
           Toast.makeText(this,"Enter your name..",Toast.LENGTH_SHORT).show();
            }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        savedata();
     }
 }
 
