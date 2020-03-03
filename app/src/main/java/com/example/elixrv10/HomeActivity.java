@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.R;
+//import androidx.appcompat.R;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -20,13 +20,13 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.Theme_AppCompat_DayNight);
-        setContentView(R.layout.);
+       // setTheme(R.style.DarkTheme);
+        setContentView(R.layout.activity_home);
         Intent intent = getIntent();
         username = intent.getStringExtra(MainActivity.MSG);
-        textView = findViewById(R.id.title);
-        String welcome = "Hello ";
-        textView.setText(welcome +username);
+        textView = findViewById(R.id.title1);
+      //  String welcome = "Hello ";
+        textView.setText(username);
     }
     public void c(View view){
         Intent intent = new Intent(this,LanguageC.class);
@@ -59,12 +59,9 @@ public class HomeActivity extends AppCompatActivity {
         if(item.getItemId() == R.id.favourites_page){
             Toast.makeText(this,"Created by Dipantan Chakraborty",Toast.LENGTH_SHORT).show();
         }
-        else if(item.getItemId() == R.id.mode){
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            }
+        else if(item.getItemId() == R.id.settings){
+           Intent intent = new Intent(this, SettingsActivity.class);
+           startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
