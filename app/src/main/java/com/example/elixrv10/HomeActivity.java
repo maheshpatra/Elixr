@@ -20,8 +20,8 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.DarkTheme);
-        setContentView(R.layout.activity_home);
+        setTheme(R.style.Theme_AppCompat_DayNight);
+        setContentView(R.layout.);
         Intent intent = getIntent();
         username = intent.getStringExtra(MainActivity.MSG);
         textView = findViewById(R.id.title);

@@ -19,4 +19,8 @@
     <string name="lets_go">Lets Go</string>
     <string name="todo">TODO</string>
     <string name="choose_your_language">Choose your language</string>
+    <string name="welcome">Welcome </string>
+
+    <string name="about">About</string>
+    <string name="enable_dark_mode">Enable Dark Mode</string>
 </resources>
