@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    >
 
     <item
         android:id="@+id/favourites_page"
@@ -8,6 +8,10 @@
         android:actionLayout="@layout/activity_home" />
     <item
         android:id="@+id/settings"
-        android:title="Settings"
+        android:title="@string/settings"
         android:actionLayout="@layout/activity_home" />
+    <item
+        android:id="@+id/logout"
+        android:title="@string/Logout"
+        android:actionLayout="@layout/activity_home"/>
 </menu>

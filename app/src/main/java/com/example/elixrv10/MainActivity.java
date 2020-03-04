@@ -1,20 +1,17 @@
 package com.example.elixrv10;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.MotionEvent;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
-
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     String username;
     Button button;
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,26 +33,21 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         Username = findViewById(R.id.editText);
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);    //Retrieving sharedpreference
-        String str1  = pref.getString("username", username);
+        String str1 = pref.getString("username", username);
         Username.setText(str1);
-     /*   Username.setOnTouchListener(new View.OnTouchListener() {
-
-            public boolean onTouch(View v, MotionEvent event) {
-                if (Username.hasFocus()) {
-                    v.getParent().requestDisallowInterceptTouchEvent(true);
-                    if ((event.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_SCROLL) {
-                        v.getParent().requestDisallowInterceptTouchEvent(false);
-                        return true;
-                    }
-                }
-                return false;
+        try {
+            if (str1.length() > 0) {                                                                       //Check if sharedpreference is loaded with values
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);         //And redirect to HomeActivity
+                intent.putExtra(MSG, str1);
+                startActivity(intent);
+                finish();
             }
-        }); */
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                username = Username.getText().toString().trim();
-                if(username.length() > 0) {
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    username = Username.getText().toString().trim();
+                    if (username.length() > 0) {
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                         SharedPreferences.Editor editor = sharedPreferences.edit();           //saving sharedpreferernce
@@ -62,14 +55,21 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                         intent.putExtra(MSG, username);
                         startActivity(intent);
-                } else {
-                    Toast.makeText(MainActivity.this, "Enter your name..", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Enter your name..", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
+            });
 
+        }
+        catch (Exception e){
+            System.out.println("Failed");
+        }
+
+
+        }
     }
-}
+
 
 
 

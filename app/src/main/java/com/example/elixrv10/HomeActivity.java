@@ -1,32 +1,30 @@
 package com.example.elixrv10;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-//import androidx.appcompat.R;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 
 public class HomeActivity extends AppCompatActivity {
     TextView textView;
     String  username;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setTheme(R.style.DarkTheme);
         setContentView(R.layout.activity_home);
         Intent intent = getIntent();
         username = intent.getStringExtra(MainActivity.MSG);
         textView = findViewById(R.id.title1);
-      //  String welcome = "Hello ";
-        textView.setText(username);
+        String welcome = "Hello ";
+        textView.setText(welcome +username);
     }
     public void c(View view){
         Intent intent = new Intent(this,LanguageC.class);
@@ -62,6 +60,16 @@ public class HomeActivity extends AppCompatActivity {
         else if(item.getItemId() == R.id.settings){
            Intent intent = new Intent(this, SettingsActivity.class);
            startActivity(intent);
+        }
+        else if(item.getItemId() == R.id.logout){
+
+            SharedPreferences preferences = getSharedPreferences("com.example.elixrv10_preferences",MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.remove("username");
+            editor.apply();
+            finish();
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
