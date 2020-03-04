@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 
 public class HomeActivity extends AppCompatActivity {
     TextView textView;
     String  username;
-
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         textView = findViewById(R.id.title1);
         String welcome = "Hello ";
         textView.setText(welcome +username);
+
     }
     public void c(View view){
         Intent intent = new Intent(this,LanguageC.class);
@@ -62,10 +64,9 @@ public class HomeActivity extends AppCompatActivity {
            startActivity(intent);
         }
         else if(item.getItemId() == R.id.logout){
-
-            SharedPreferences preferences = getSharedPreferences("com.example.elixrv10_preferences",MODE_PRIVATE);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.remove("username");
+            sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
             editor.apply();
             finish();
             Intent intent = new Intent(this,MainActivity.class);
